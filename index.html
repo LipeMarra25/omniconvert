@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fluxo de login experimental com backend e dashboard.">
+  <title>Orbit Pass | Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+  <main class="access-shell">
+    <section class="signal-stage" aria-label="Experiência visual Orbit Pass">
+      <nav class="topbar" aria-label="Navegação principal">
+        <a class="brand" href="/" aria-label="Orbit Pass">
+          <span class="brand-mark">OP</span>
+          <span>Orbit Pass</span>
+        </a>
+        <button class="theme-toggle" type="button" aria-label="Alternar tema">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4V2m0 20v-2m8-8h2M2 12h2m14.95-6.95 1.41-1.41M3.64 20.36l1.41-1.41m0-13.9L3.64 3.64m16.72 16.72-1.41-1.41M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.5A8.6 8.6 0 0 1 9.5 3.5 8.8 8.8 0 1 0 20.5 14.5Z"/>
+          </svg>
+        </button>
+      </nav>
+
+      <div class="orbit-wrap" aria-hidden="true">
+        <div class="orbit-core">
+          <span class="core-dot"></span>
+          <span class="core-ring one"></span>
+          <span class="core-ring two"></span>
+          <span class="core-ring three"></span>
+          <span class="planet p1"></span>
+          <span class="planet p2"></span>
+          <span class="planet p3"></span>
+        </div>
+        <div class="floating-note note-a">
+          <small>trust score</small>
+          <strong>97.8</strong>
+        </div>
+        <div class="floating-note note-b">
+          <small>email capture</small>
+          <strong>live</strong>
+        </div>
+        <div class="floating-note note-c">
+          <small>dashboard</small>
+          <strong>ready</strong>
+        </div>
+      </div>
+
+      <div class="stage-copy">
+        <p class="eyebrow">identity lab</p>
+        <h1>Um login que parece produto, não template.</h1>
+        <p>
+          Acesso com backend próprio, registro de leads e uma dashboard de boas-vindas
+          para mostrar fluxo completo no portfólio.
+        </p>
+      </div>
+    </section>
+
+    <section class="auth-panel" aria-label="Área de login">
+      <div class="auth-card">
+        <div class="mobile-brand">
+          <span class="brand-mark">OP</span>
+          <span>Orbit Pass</span>
+        </div>
+
+        <div class="auth-heading">
+          <p class="eyebrow">portal privado</p>
+          <h2>Sincronize seu acesso</h2>
+          <p>Entre para abrir a dashboard e salvar seu email no backend.</p>
+        </div>
+
+        <form class="login-form" novalidate>
+          <label class="field">
+            <span>Email</span>
+            <span class="input-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 6h16v12H4z"/>
+                <path d="m4 7 8 6 8-6"/>
+              </svg>
+              <input type="email" name="email" placeholder="voce@email.com" autocomplete="email" required>
+            </span>
+            <small class="field-message">Digite um email válido.</small>
+          </label>
+
+          <label class="field">
+            <span>Senha demo</span>
+            <span class="input-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 11V8a5 5 0 0 1 10 0v3"/>
+                <path d="M6 11h12v9H6z"/>
+              </svg>
+              <input type="password" name="password" placeholder="Mínimo 6 caracteres" autocomplete="current-password" minlength="6" required>
+              <button class="password-toggle" type="button" aria-label="Mostrar senha">
+                <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/>
+                  <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                </svg>
+                <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m3 3 18 18"/>
+                  <path d="M10.6 10.6A3 3 0 0 0 13.4 13.4"/>
+                  <path d="M7.4 7.4C4.4 9 2.5 12 2.5 12S6 18.5 12 18.5c1.8 0 3.4-.6 4.8-1.4"/>
+                  <path d="M14.1 5.8c4.6.9 7.4 6.2 7.4 6.2a17 17 0 0 1-2.1 2.8"/>
+                </svg>
+              </button>
+            </span>
+            <small class="field-message">A senha precisa ter pelo menos 6 caracteres.</small>
+          </label>
+
+          <div class="form-options">
+            <label class="remember">
+              <input type="checkbox" checked>
+              <span>Lembrar sessão</span>
+            </label>
+            <a href="#">Acesso assistido</a>
+          </div>
+
+          <button class="submit-btn" type="submit">
+            <span>Entrar na órbita</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14"/>
+              <path d="m13 6 6 6-6 6"/>
+            </svg>
+          </button>
+        </form>
+
+        <div class="micro-proof" aria-label="Recursos do fluxo">
+          <span>Backend local</span>
+          <span>Email salvo</span>
+          <span>Dashboard real</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

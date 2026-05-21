@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard Orbit Pass após login.">
+  <title>Orbit Pass | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+  <main class="dashboard-shell">
+    <aside class="sidebar" aria-label="Menu principal">
+      <div>
+        <a class="brand" href="/">
+          <span class="brand-mark">OP</span>
+          <span>Orbit Pass</span>
+        </a>
+        <nav class="nav-stack" aria-label="Seções da dashboard">
+          <a class="is-active" href="#">Visão geral</a>
+          <a href="#">Leads</a>
+          <a href="#">Sessões</a>
+          <a href="#">Ajustes</a>
+        </nav>
+      </div>
+      <button class="logout-btn" type="button">Sair</button>
+    </aside>
+
+    <section class="dashboard-main">
+      <div class="dashboard-hero">
+        <article class="welcome-panel">
+          <span class="session-pill" data-user-email>Carregando sessão...</span>
+          <h1>Dashboard em órbita.</h1>
+          <p>
+            Este painel abre após o login e lê os acessos salvos pelo backend.
+            É um fluxo completo para mostrar no portfólio: interface, API e persistência.
+          </p>
+        </article>
+
+        <article class="insight-panel">
+          <div>
+            <p class="eyebrow">conversão demo</p>
+            <h2>Emails capturados</h2>
+          </div>
+          <div class="radial-stat" data-total-leads>0</div>
+          <p class="muted-copy">Atualizado em tempo real a partir do arquivo local de dados.</p>
+        </article>
+      </div>
+
+      <section class="dashboard-grid" aria-label="Indicadores">
+        <article class="dash-card">
+          <h2>Último acesso</h2>
+          <strong data-last-login>--:--</strong>
+          <span>Horário do login mais recente</span>
+        </article>
+        <article class="dash-card">
+          <h2>Visitantes únicos</h2>
+          <strong data-unique-leads>0</strong>
+          <span>Emails diferentes registrados</span>
+        </article>
+        <article class="dash-card">
+          <h2>Status API</h2>
+          <strong data-api-status>Online</strong>
+          <span>Servidor Node sem dependências</span>
+        </article>
+      </section>
+
+      <section class="lead-table" aria-label="Emails salvos">
+        <header>
+          <div>
+            <p class="eyebrow">backend data</p>
+            <h2>Emails salvos</h2>
+          </div>
+        </header>
+        <table>
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Data</th>
+              <th>Origem</th>
+            </tr>
+          </thead>
+          <tbody data-leads-body>
+            <tr>
+              <td colspan="3">Carregando...</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
