@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cadastro do NeonGate Converter com email e senha.">
-  <title>NeonGate Converter | Cadastro</title>
+  <meta name="description" content="Cadastro do OmniConvert com email e senha.">
+  <title>OmniConvert | Cadastro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,21 +13,21 @@
 <body class="login-page signup-page">
   <main class="login-scene signup-scene">
     <nav class="login-topbar" aria-label="Navegação principal">
-      <a class="brand" href="/" aria-label="NeonGate">
-        <span class="brand-mark">NG</span>
-        <span>NeonGate Converter</span>
+      <a class="brand" href="/" aria-label="OmniConvert">
+        <span class="brand-mark">OC</span>
+        <span>OmniConvert</span>
       </a>
-      <span class="status-chip">new converter account</span>
+      <span class="status-chip">Every unit. Every scale. Every possibility.</span>
     </nav>
 
     <section class="login-card signup-card" aria-label="Área de cadastro">
       <div class="auth-heading">
-        <p class="eyebrow">converter registry</p>
-        <h1>Cadastro</h1>
-        <p>Crie sua conta para salvar histórico, favoritos e consumo do plano Free.</p>
+        <p class="eyebrow">OmniConvert account</p>
+        <h1>Create account</h1>
+        <p>One platform. Infinite conversions. Save history, favorites, and usage across your workspace.</p>
       </div>
 
-      <form class="auth-form" data-endpoint="/api/register" data-loading-label="Criando acesso..." data-success-label="Cadastro criado. Abrindo dashboard..." data-button-label="Criar acesso" novalidate>
+      <form class="auth-form" data-endpoint="/api/register" data-loading-label="Creating account..." data-success-label="Account created. Opening OmniConvert..." data-button-label="Create account" novalidate>
         <label class="field">
           <span>E-mail</span>
           <span class="input-wrap">
@@ -35,19 +35,19 @@
               <path d="M4 6h16v12H4z"/>
               <path d="m4 7 8 6 8-6"/>
             </svg>
-            <input type="email" name="email" placeholder="seuemail@neongate.dev" autocomplete="email" required>
+            <input type="email" name="email" placeholder="you@omniconvert.app" autocomplete="email" required>
           </span>
           <small class="field-message">Digite um email válido.</small>
         </label>
 
         <label class="field">
-          <span>Senha</span>
+          <span>Password</span>
           <span class="input-wrap">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M7 11V8a5 5 0 0 1 10 0v3"/>
               <path d="M6 11h12v9H6z"/>
             </svg>
-            <input type="password" name="password" placeholder="Crie uma senha forte" autocomplete="new-password" minlength="6" required>
+            <input type="password" name="password" placeholder="Create a strong password" autocomplete="new-password" minlength="6" required>
             <button class="password-toggle" type="button" aria-label="Mostrar senha">
               <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/>
@@ -71,7 +71,7 @@
         </div>
 
         <button class="submit-btn" type="submit">
-          <span>Criar acesso</span>
+          <span>Create account</span>
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 12h14"/>
             <path d="m13 6 6 6-6 6"/>
@@ -79,16 +79,16 @@
         </button>
       </form>
 
-      <p class="signup-copy">Já tem conta? <a href="index.html">Voltar para login</a></p>
+      <p class="signup-copy">Already have an account? <a href="index.html">Back to login</a></p>
     </section>
 
     <aside class="signup-orbit" aria-hidden="true">
       <span>01</span>
       <strong>Email validado</strong>
       <span>02</span>
-      <strong>Limite Free ativado</strong>
+      <strong>Free usage enabled</strong>
       <span>03</span>
-      <strong>Conversor universal liberado</strong>
+      <strong>Omni engine unlocked</strong>
     </aside>
   </main>
 

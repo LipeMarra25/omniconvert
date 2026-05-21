@@ -1,6 +1,8 @@
-# NeonGate Converter
+# OmniConvert
 
 SaaS visual premium para conversões universais, com login, cadastro, dashboard, limites por plano, histórico e favoritos.
+
+Slogan: **Convert anything. Instantly.**
 
 ## Recursos
 
@@ -23,15 +25,15 @@ SaaS visual premium para conversões universais, com login, cadastro, dashboard,
 - `app/conversion-engine.js`: motor reutilizável de conversões
 - `app/state.js`: sessão, plano, limites, histórico e favoritos
 - `app/dashboard.js`: UI, tabs, ações e modal Plus
-- `OrbitPassServer.java`: backend local de autenticação demo
+- `OmniConvertServer.java`: backend local de autenticação demo
 
 ## Como visualizar
 
 Compile e rode o servidor:
 
 ```bash
-javac OrbitPassServer.java
-java OrbitPassServer
+javac OmniConvertServer.java
+java OmniConvertServer
 ```
 
 Depois abra:

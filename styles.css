@@ -47,7 +47,7 @@ a {
   padding: 5.5rem 1rem 2rem;
   background:
     linear-gradient(180deg, rgba(3, 3, 10, 0.3), rgba(3, 3, 10, 0.42) 48%, rgba(3, 3, 10, 0.8)),
-    url("assets/neon-city-login.png") center/cover no-repeat;
+    url("assets/omniconvert-bg.png") center/cover no-repeat;
 }
 
 .login-scene::before {
@@ -494,7 +494,7 @@ a {
   min-height: 100vh;
   background:
     linear-gradient(180deg, rgba(5, 5, 13, 0.72), rgba(5, 5, 13, 0.94)),
-    url("assets/neon-city-login.png") center/cover fixed no-repeat;
+    url("assets/omniconvert-bg.png") center/cover fixed no-repeat;
 }
 
 .dashboard-shell {

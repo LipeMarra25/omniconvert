@@ -4,16 +4,16 @@ const HISTORY_LIMIT = 20;
 const todayKey = () => new Date().toISOString().slice(0, 10);
 
 function accountKey(session) {
-  return session?.email || "preview@neongate.local";
+  return session?.email || "preview@omniconvert.local";
 }
 
 function storageKey(session, name) {
-  return `neongate:${accountKey(session)}:${name}`;
+  return `omniconvert:${accountKey(session)}:${name}`;
 }
 
 export function getSession() {
-  return JSON.parse(localStorage.getItem("orbit-session") || "null") || {
-    email: "preview@neongate.local",
+  return JSON.parse(localStorage.getItem("omni-session") || "null") || {
+    email: "preview@omniconvert.local",
     id: "preview"
   };
 }
@@ -98,6 +98,6 @@ export function topCategory(history) {
 }
 
 export function logout() {
-  localStorage.removeItem("orbit-session");
+  localStorage.removeItem("omni-session");
   window.location.href = "/";
 }

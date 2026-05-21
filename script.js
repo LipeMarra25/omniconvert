@@ -81,7 +81,7 @@ form?.addEventListener("submit", async (event) => {
       throw new Error(data.message || "Não foi possível concluir agora.");
     }
 
-    localStorage.setItem("orbit-session", JSON.stringify(data.session));
+    localStorage.setItem("omni-session", JSON.stringify(data.session));
     showToast(form.dataset.successLabel || "Acesso liberado.");
 
     window.setTimeout(() => {

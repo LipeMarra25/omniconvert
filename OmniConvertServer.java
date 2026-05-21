@@ -19,7 +19,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class OrbitPassServer {
+public class OmniConvertServer {
     private static final int PORT = 4173;
     private static final Path ROOT = Path.of("").toAbsolutePath().normalize();
     private static final Path DATA_DIR = ROOT.resolve("data");
@@ -34,10 +34,10 @@ public class OrbitPassServer {
 
     public static void main(String[] args) throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress("127.0.0.1", PORT), 0);
-        server.createContext("/", OrbitPassServer::handle);
+        server.createContext("/", OmniConvertServer::handle);
         server.setExecutor(null);
         server.start();
-        System.out.println("NeonGate rodando em http://localhost:" + PORT);
+        System.out.println("OmniConvert rodando em http://localhost:" + PORT);
     }
 
     private static void handle(HttpExchange exchange) throws IOException {

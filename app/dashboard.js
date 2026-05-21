@@ -91,7 +91,7 @@ function renderMetrics() {
   $("[data-plan-label]").textContent = summary.plan;
   $("[data-usage-ring]").textContent = summary.plan === "Plus" ? "∞" : `${summary.usage.count}/${summary.limit}`;
   $("[data-usage-copy]").textContent = summary.plan === "Plus"
-    ? "Conversões ilimitadas ativas no NeonGate Plus."
+    ? "Unlimited conversion power active with OmniConvert Plus."
     : `${summary.remaining} conversões restantes hoje no plano Free.`;
   $("[data-metric-today]").textContent = summary.usage.count;
   $("[data-metric-remaining]").textContent = summary.remaining;
@@ -229,7 +229,7 @@ function setPlanPlus() {
   setPlan(session, "Plus");
   closeUpgradeModal();
   refresh();
-  showToast("NeonGate Plus ativado em modo demo.");
+  showToast("OmniConvert Plus ativado em modo demo.");
 }
 
 function initEvents() {
