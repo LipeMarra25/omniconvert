@@ -1,6 +1,6 @@
-# NeonGate Login
+# NeonGate Converter
 
-Página de login neon responsiva, com backend Java e dashboard pós-login.
+SaaS visual premium para conversões universais, com login, cadastro, dashboard, limites por plano, histórico e favoritos.
 
 ## Recursos
 
@@ -10,9 +10,20 @@ Página de login neon responsiva, com backend Java e dashboard pós-login.
 - Validação visual de email e senha
 - Botão para mostrar ou ocultar senha
 - Tela de cadastro com medidor visual de senha
+- Dashboard SaaS com métricas de conversão
+- Conversor universal com abas por categoria
+- Histórico e favoritos por conta via `localStorage`
+- Plano Free com limite diário e Plus em modo demo
 - Backend local sem dependências externas
 - Persistência dos emails em `data/emails.json`
 - Dashboard aberta depois do login
+
+## Estrutura
+
+- `app/conversion-engine.js`: motor reutilizável de conversões
+- `app/state.js`: sessão, plano, limites, histórico e favoritos
+- `app/dashboard.js`: UI, tabs, ações e modal Plus
+- `OrbitPassServer.java`: backend local de autenticação demo
 
 ## Como visualizar
 

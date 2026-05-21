@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dashboard Orbit Pass após login.">
-  <title>NeonGate | Dashboard</title>
+  <meta name="description" content="NeonGate Converter, conversor universal SaaS.">
+  <title>NeonGate Converter | Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,84 +14,230 @@
   <main class="dashboard-shell">
     <aside class="sidebar" aria-label="Menu principal">
       <div>
-        <a class="brand" href="/">
+        <a class="brand" href="dashboard.html">
           <span class="brand-mark">NG</span>
-          <span>NeonGate</span>
+          <span>NeonGate Converter</span>
         </a>
-        <nav class="nav-stack" aria-label="Seções da dashboard">
-          <a class="is-active" href="#">Visão geral</a>
-          <a href="#">Leads</a>
-          <a href="#">Sessões</a>
-          <a href="#">Ajustes</a>
+        <nav class="nav-stack" aria-label="Seções do app">
+          <a class="is-active" href="#overview">Visão geral</a>
+          <a href="#converter">Converter</a>
+          <a href="#history">Histórico</a>
+          <a href="#converter" data-nav-category="currency">Moedas</a>
+          <a href="#converter" data-nav-category="bases">Bases Numéricas</a>
+          <a href="#converter" data-nav-category="digital">Dados e Tecnologia</a>
+          <a href="#converter" data-nav-category="scientific">Científico</a>
+          <a href="#plus">Plano Plus</a>
+          <a href="#settings">Ajustes</a>
         </nav>
       </div>
       <button class="logout-btn" type="button">Sair</button>
     </aside>
 
     <section class="dashboard-main">
-      <div class="dashboard-hero">
-        <article class="welcome-panel">
-          <span class="session-pill" data-user-email>Carregando sessão...</span>
-          <h1>Centro da cidade.</h1>
-          <p>
-            Este painel abre após o login, lê os acessos salvos pelo backend
-            e transforma a tela em uma central viva para acompanhar visitantes.
-          </p>
+      <section class="dashboard-hero app-section" id="overview">
+        <article class="welcome-panel converter-hero">
+          <span class="session-pill" data-user-email>Carregando conta...</span>
+          <h1>Converta qualquer coisa.</h1>
+          <p>Uma central universal para transformar unidades, moedas, dados, códigos e escalas em tempo real.</p>
         </article>
 
-        <article class="insight-panel">
+        <article class="insight-panel usage-panel">
           <div>
-            <p class="eyebrow">conversão demo</p>
-            <h2>Emails capturados</h2>
+            <p class="eyebrow">plano atual</p>
+            <h2 data-plan-label>Free</h2>
           </div>
-          <div class="radial-stat" data-total-leads>0</div>
-          <p class="muted-copy">Atualizado em tempo real a partir do arquivo local de dados.</p>
-        </article>
-      </div>
-
-      <section class="dashboard-grid" aria-label="Indicadores">
-        <article class="dash-card">
-          <h2>Último acesso</h2>
-          <strong data-last-login>--:--</strong>
-          <span>Horário do login mais recente</span>
-        </article>
-        <article class="dash-card">
-          <h2>Visitantes únicos</h2>
-          <strong data-unique-leads>0</strong>
-          <span>Emails diferentes registrados</span>
-        </article>
-        <article class="dash-card">
-          <h2>Status API</h2>
-          <strong data-api-status>Online</strong>
-          <span>Servidor Node sem dependências</span>
+          <div class="radial-stat" data-usage-ring>0/12</div>
+          <p class="muted-copy" data-usage-copy>Conversões diárias disponíveis no plano Free.</p>
         </article>
       </section>
 
-      <section class="lead-table" aria-label="Emails salvos">
-        <header>
+      <section class="dashboard-grid metric-grid app-section" aria-label="Indicadores">
+        <article class="dash-card">
+          <h2>Conversões feitas hoje</h2>
+          <strong data-metric-today>0</strong>
+          <span>Uso registrado nesta conta</span>
+        </article>
+        <article class="dash-card">
+          <h2>Conversões restantes</h2>
+          <strong data-metric-remaining>12</strong>
+          <span>Plano Free reinicia diariamente</span>
+        </article>
+        <article class="dash-card">
+          <h2>Plano atual</h2>
+          <strong data-metric-plan>Free</strong>
+          <span>Plus libera conversões ilimitadas</span>
+        </article>
+        <article class="dash-card">
+          <h2>Última conversão</h2>
+          <strong data-metric-last>--</strong>
+          <span>Resultado mais recente</span>
+        </article>
+        <article class="dash-card">
+          <h2>Categoria mais usada</h2>
+          <strong data-metric-top>--</strong>
+          <span>Com base no histórico local</span>
+        </article>
+        <article class="dash-card">
+          <h2>Total histórico</h2>
+          <strong data-metric-total>0</strong>
+          <span>Conversões salvas nesta conta</span>
+        </article>
+        <article class="dash-card">
+          <h2>Status API</h2>
+          <strong>Future-ready</strong>
+          <span>Câmbio, analytics e pagamentos</span>
+        </article>
+        <article class="dash-card quick-card">
+          <h2>Conversões rápidas</h2>
+          <div class="quick-actions" data-quick-actions></div>
+        </article>
+      </section>
+
+      <section class="converter-panel app-section" id="converter">
+        <header class="section-header">
           <div>
-            <p class="eyebrow">backend data</p>
-            <h2>Emails salvos</h2>
+            <p class="eyebrow">universal engine</p>
+            <h2>Conversor Universal</h2>
+          </div>
+          <div class="search-wrap">
+            <input type="search" data-search placeholder="Buscar categoria, unidade ou formato">
           </div>
         </header>
-        <table>
-          <thead>
-            <tr>
-              <th>Email</th>
-              <th>Data</th>
-              <th>Origem</th>
-            </tr>
-          </thead>
-          <tbody data-leads-body>
-            <tr>
-              <td colspan="3">Carregando...</td>
-            </tr>
-          </tbody>
-        </table>
+
+        <div class="tabs-shell">
+          <div class="tabs-list" data-tabs></div>
+          <div class="converter-workbench">
+            <div class="converter-form">
+              <label class="field">
+                <span>Valor</span>
+                <span class="input-wrap">
+                  <input data-input-value type="text" inputmode="decimal" placeholder="Digite um valor">
+                </span>
+              </label>
+              <label class="field">
+                <span>De</span>
+                <span class="select-wrap">
+                  <select data-from-unit></select>
+                </span>
+              </label>
+              <button class="icon-action" type="button" data-swap title="Inverter unidades">⇄</button>
+              <label class="field">
+                <span>Para</span>
+                <span class="select-wrap">
+                  <select data-to-unit></select>
+                </span>
+              </label>
+            </div>
+
+            <article class="result-card">
+              <div>
+                <p class="eyebrow" data-active-category>Comprimento</p>
+                <h3 data-result>Resultado aparece aqui</h3>
+                <span data-result-detail>Escolha uma categoria e informe um valor.</span>
+              </div>
+              <div class="result-actions">
+                <button type="button" data-save>Salvar</button>
+                <button type="button" data-copy>Copiar</button>
+                <button type="button" data-favorite>Favoritar</button>
+                <button type="button" data-clear>Limpar</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="history-panel app-section" id="history">
+        <header class="section-header">
+          <div>
+            <p class="eyebrow">timeline</p>
+            <h2>Histórico e favoritos</h2>
+          </div>
+          <button class="ghost-btn" type="button" data-clear-history>Limpar histórico</button>
+        </header>
+        <div class="history-layout">
+          <div class="lead-table">
+            <header><h2>Histórico por usuário</h2></header>
+            <table>
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Categoria</th>
+                  <th>Entrada</th>
+                  <th>Resultado</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody data-history-body></tbody>
+            </table>
+          </div>
+          <aside class="favorites-panel">
+            <h2>Favoritos</h2>
+            <div data-favorites-list></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="plus-panel app-section" id="plus">
+        <header class="section-header">
+          <div>
+            <p class="eyebrow">upgrade</p>
+            <h2>NeonGate Plus</h2>
+          </div>
+        </header>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <p class="eyebrow">free</p>
+            <h3>R$ 0</h3>
+            <ul>
+              <li>12 conversões por dia</li>
+              <li>Histórico limitado</li>
+              <li>Acesso básico</li>
+            </ul>
+          </article>
+          <article class="price-card is-featured">
+            <p class="eyebrow">plus</p>
+            <h3>R$ 19/mês</h3>
+            <ul>
+              <li>Conversões ilimitadas</li>
+              <li>Histórico completo</li>
+              <li>Favoritos ilimitados</li>
+              <li>APIs premium futuras</li>
+              <li>Prioridade e experiência premium</li>
+            </ul>
+            <button class="submit-btn" type="button" data-upgrade>Assinar Plus</button>
+            <small>Preparado para Stripe / Mercado Pago.</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="settings-panel app-section" id="settings">
+        <header class="section-header">
+          <div>
+            <p class="eyebrow">settings</p>
+            <h2>Ajustes</h2>
+          </div>
+        </header>
+        <div class="dash-card">
+          <h2>Arquitetura pronta para escalar</h2>
+          <span>Banco real, Stripe, Mercado Pago, API de câmbio, analytics e multi-language.</span>
+        </div>
       </section>
     </section>
   </main>
 
-  <script src="dashboard.js"></script>
+  <div class="upgrade-modal" data-upgrade-modal hidden>
+    <div class="modal-card">
+      <p class="eyebrow">limite atingido</p>
+      <h2>Desbloqueie conversões ilimitadas com NeonGate Plus</h2>
+      <p>Seu plano Free chegou ao limite diário. O Plus libera uso ilimitado, histórico completo e favoritos sem teto.</p>
+      <div class="modal-actions">
+        <button class="submit-btn" type="button" data-upgrade>Assinar Plus</button>
+        <button class="ghost-btn" type="button" data-close-modal>Continuar no Free</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app/dashboard.js"></script>
 </body>
 </html>
