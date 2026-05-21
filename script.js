@@ -1,17 +1,10 @@
-const root = document.documentElement;
-const themeToggle = document.querySelector(".theme-toggle");
 const passwordInput = document.querySelector('input[name="password"]');
 const passwordToggle = document.querySelector(".password-toggle");
-const form = document.querySelector(".login-form");
+const form = document.querySelector(".auth-form");
 const toast = document.querySelector(".toast");
 const submitButton = document.querySelector(".submit-btn");
-
-const savedTheme = localStorage.getItem("orbit-theme");
-const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-
-if (savedTheme === "light" || (!savedTheme && prefersLight)) {
-  root.classList.add("light");
-}
+const strengthText = document.querySelector("[data-strength-text]");
+const strengthBars = [...document.querySelectorAll(".signal-bar")];
 
 function showToast(message) {
   toast.textContent = message;
@@ -19,12 +12,24 @@ function showToast(message) {
   window.setTimeout(() => toast.classList.remove("is-visible"), 2600);
 }
 
-themeToggle.addEventListener("click", () => {
-  root.classList.toggle("light");
-  localStorage.setItem("orbit-theme", root.classList.contains("light") ? "light" : "dark");
-});
+function updateStrength(value) {
+  if (!strengthText) {
+    return;
+  }
 
-passwordToggle.addEventListener("click", () => {
+  const score = [
+    value.length >= 6,
+    /[A-Z]/.test(value),
+    /[0-9]/.test(value) || /[^A-Za-z0-9]/.test(value)
+  ].filter(Boolean).length;
+
+  const labels = ["senha em modo stealth", "sinal inicial", "sinal estável", "sinal neon forte"];
+
+  strengthText.textContent = labels[score];
+  strengthBars.forEach((bar, index) => bar.classList.toggle("is-active", index < score));
+}
+
+passwordToggle?.addEventListener("click", () => {
   const isPassword = passwordInput.type === "password";
 
   passwordInput.type = isPassword ? "text" : "password";
@@ -33,7 +38,9 @@ passwordToggle.addEventListener("click", () => {
   passwordInput.focus();
 });
 
-form.addEventListener("submit", async (event) => {
+passwordInput?.addEventListener("input", () => updateStrength(passwordInput.value));
+
+form?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const fields = [...form.querySelectorAll(".field")];
@@ -53,11 +60,13 @@ form.addEventListener("submit", async (event) => {
   }
 
   const formData = new FormData(form);
+  const buttonLabel = form.dataset.buttonLabel || "Entrar";
+
   submitButton.disabled = true;
-  submitButton.querySelector("span").textContent = "Sincronizando...";
+  submitButton.querySelector("span").textContent = form.dataset.loadingLabel || "Sincronizando...";
 
   try {
-    const response = await fetch("/api/login", {
+    const response = await fetch(form.dataset.endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -69,11 +78,11 @@ form.addEventListener("submit", async (event) => {
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.message || "Não foi possível entrar agora.");
+      throw new Error(data.message || "Não foi possível concluir agora.");
     }
 
     localStorage.setItem("orbit-session", JSON.stringify(data.session));
-    showToast("Acesso salvo. Abrindo dashboard...");
+    showToast(form.dataset.successLabel || "Acesso liberado.");
 
     window.setTimeout(() => {
       window.location.href = data.redirectTo;
@@ -82,11 +91,11 @@ form.addEventListener("submit", async (event) => {
     showToast(error.message);
   } finally {
     submitButton.disabled = false;
-    submitButton.querySelector("span").textContent = "Entrar";
+    submitButton.querySelector("span").textContent = buttonLabel;
   }
 });
 
-form.addEventListener("input", (event) => {
+form?.addEventListener("input", (event) => {
   const field = event.target.closest(".field");
 
   if (field) {

@@ -46,7 +46,12 @@ public class OrbitPassServer {
             String path = exchange.getRequestURI().getPath();
 
             if ("POST".equals(method) && "/api/login".equals(path)) {
-                handleLogin(exchange);
+                handleAccess(exchange, "login");
+                return;
+            }
+
+            if ("POST".equals(method) && "/api/register".equals(path)) {
+                handleAccess(exchange, "cadastro");
                 return;
             }
 
@@ -66,7 +71,7 @@ public class OrbitPassServer {
         }
     }
 
-    private static void handleLogin(HttpExchange exchange) throws IOException {
+    private static void handleAccess(HttpExchange exchange, String source) throws IOException {
         String body = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
         String email = extractJsonValue(body, "email").trim().toLowerCase(Locale.ROOT);
         String password = extractJsonValue(body, "password");
@@ -82,7 +87,7 @@ public class OrbitPassServer {
         }
 
         List<Lead> leads = readLeads();
-        Lead lead = new Lead(UUID.randomUUID().toString(), email, DateTimeFormatter.ISO_INSTANT.format(Instant.now()), "login");
+        Lead lead = new Lead(UUID.randomUUID().toString(), email, DateTimeFormatter.ISO_INSTANT.format(Instant.now()), source);
 
         leads.add(0, lead);
         if (leads.size() > 100) {

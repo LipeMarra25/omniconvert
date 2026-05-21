@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Login neon com backend e dashboard.">
-  <title>NeonGate | Login</title>
+  <meta name="description" content="Cadastro NeonGate com email e senha.">
+  <title>NeonGate | Cadastro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="login-page">
-  <main class="login-scene">
+<body class="login-page signup-page">
+  <main class="login-scene signup-scene">
     <nav class="login-topbar" aria-label="Navegação principal">
       <a class="brand" href="/" aria-label="NeonGate">
         <span class="brand-mark">NG</span>
         <span>NeonGate</span>
       </a>
-      <span class="status-chip">city access online</span>
+      <span class="status-chip">new citizen pass</span>
     </nav>
 
-    <section class="login-card" aria-label="Área de login">
+    <section class="login-card signup-card" aria-label="Área de cadastro">
       <div class="auth-heading">
-        <p class="eyebrow">night city portal</p>
-        <h1>Login</h1>
-        <p>Entre para abrir o painel e registrar seu acesso no backend.</p>
+        <p class="eyebrow">city pass registry</p>
+        <h1>Cadastro</h1>
+        <p>Crie sua credencial para entrar na cidade e aparecer no painel de acessos.</p>
       </div>
 
-      <form class="auth-form" data-endpoint="/api/login" data-loading-label="Entrando..." data-success-label="Acesso liberado. Abrindo dashboard..." data-button-label="Entrar" novalidate>
+      <form class="auth-form" data-endpoint="/api/register" data-loading-label="Criando acesso..." data-success-label="Cadastro criado. Abrindo dashboard..." data-button-label="Criar acesso" novalidate>
         <label class="field">
           <span>E-mail</span>
           <span class="input-wrap">
@@ -35,7 +35,7 @@
               <path d="M4 6h16v12H4z"/>
               <path d="m4 7 8 6 8-6"/>
             </svg>
-            <input type="email" name="email" placeholder="MeuEmail@meu.com" autocomplete="email" required>
+            <input type="email" name="email" placeholder="seuemail@neongate.dev" autocomplete="email" required>
           </span>
           <small class="field-message">Digite um email válido.</small>
         </label>
@@ -47,7 +47,7 @@
               <path d="M7 11V8a5 5 0 0 1 10 0v3"/>
               <path d="M6 11h12v9H6z"/>
             </svg>
-            <input type="password" name="password" placeholder="MinhaSenha123" autocomplete="current-password" minlength="6" required>
+            <input type="password" name="password" placeholder="Crie uma senha forte" autocomplete="new-password" minlength="6" required>
             <button class="password-toggle" type="button" aria-label="Mostrar senha">
               <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/>
@@ -63,16 +63,15 @@
           <small class="field-message">A senha precisa ter pelo menos 6 caracteres.</small>
         </label>
 
-        <div class="form-options">
-          <label class="remember">
-            <input type="checkbox" checked>
-            <span>Lembrar senha</span>
-          </label>
-          <a href="#">Esqueci a senha</a>
+        <div class="password-signal" aria-label="Força da senha">
+          <span class="signal-bar"></span>
+          <span class="signal-bar"></span>
+          <span class="signal-bar"></span>
+          <strong data-strength-text>senha em modo stealth</strong>
         </div>
 
         <button class="submit-btn" type="submit">
-          <span>Entrar</span>
+          <span>Criar acesso</span>
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 12h14"/>
             <path d="m13 6 6 6-6 6"/>
@@ -80,8 +79,17 @@
         </button>
       </form>
 
-      <p class="signup-copy">Não tem conta? <a href="signup.html">Cadastre-se</a></p>
+      <p class="signup-copy">Já tem conta? <a href="index.html">Voltar para login</a></p>
     </section>
+
+    <aside class="signup-orbit" aria-hidden="true">
+      <span>01</span>
+      <strong>Email validado</strong>
+      <span>02</span>
+      <strong>Senha salva em etapa demo</strong>
+      <span>03</span>
+      <strong>Passe urbano ativo</strong>
+    </aside>
   </main>
 
   <div class="toast" role="status" aria-live="polite"></div>

@@ -62,6 +62,18 @@ a {
   pointer-events: none;
 }
 
+.signup-scene {
+  place-items: center;
+}
+
+.signup-scene::before {
+  background:
+    radial-gradient(circle at 32% 18%, rgba(255, 63, 212, 0.28), transparent 5rem),
+    radial-gradient(circle at 48% 46%, rgba(255, 63, 212, 0.2), transparent 14rem),
+    radial-gradient(circle at 62% 54%, rgba(105, 232, 255, 0.28), transparent 16rem),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.58), transparent 24%, transparent 74%, rgba(0, 0, 0, 0.42));
+}
+
 .login-scene::after {
   position: absolute;
   inset: 0;
@@ -137,6 +149,18 @@ a {
     0 0 80px rgba(105, 232, 255, 0.18);
   backdrop-filter: blur(18px);
   animation: cardEnter 0.8s ease both;
+}
+
+.signup-card {
+  width: min(100%, 34rem);
+  border-color: rgba(255, 63, 212, 0.28);
+  background:
+    linear-gradient(135deg, rgba(105, 232, 255, 0.12), rgba(255, 63, 212, 0.16)),
+    rgba(12, 9, 24, 0.56);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 28px 90px rgba(0, 0, 0, 0.46),
+    0 0 90px rgba(255, 63, 212, 0.2);
 }
 
 .login-card::before {
@@ -302,6 +326,37 @@ a {
   font-weight: 800;
 }
 
+.password-signal {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.password-signal strong {
+  grid-column: 1 / -1;
+  color: var(--cyan);
+  text-align: center;
+  text-shadow: 0 0 18px rgba(105, 232, 255, 0.3);
+}
+
+.signal-bar {
+  height: 0.38rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.signal-bar.is-active {
+  background: linear-gradient(90deg, var(--pink), var(--cyan));
+  box-shadow: 0 0 18px rgba(105, 232, 255, 0.36);
+}
+
 .remember {
   display: inline-flex;
   align-items: center;
@@ -324,6 +379,7 @@ a {
 .submit-btn {
   position: relative;
   display: inline-flex;
+  width: 100%;
   min-height: 3.6rem;
   align-items: center;
   justify-content: center;
@@ -372,6 +428,41 @@ a {
   color: rgba(255, 255, 255, 0.82);
   text-align: center;
   font-weight: 800;
+}
+
+.signup-orbit {
+  position: absolute;
+  right: clamp(1rem, 5vw, 4rem);
+  bottom: clamp(1rem, 5vw, 3rem);
+  z-index: 1;
+  display: grid;
+  width: min(18rem, calc(100vw - 2rem));
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem 0.85rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  background: rgba(8, 7, 18, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(16px);
+}
+
+.signup-orbit span {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 50%;
+  color: #140d1c;
+  background: linear-gradient(135deg, var(--cyan), var(--pink));
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.signup-orbit strong {
+  align-self: center;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.82rem;
 }
 
 .toast {
@@ -657,6 +748,13 @@ a {
 
   .login-card {
     padding: 1.35rem;
+  }
+
+  .signup-orbit {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 1rem;
   }
 
   .form-options {

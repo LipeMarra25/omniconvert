@@ -9,6 +9,7 @@ Página de login neon responsiva, com backend Java e dashboard pós-login.
 - Animações e microinterações em CSS
 - Validação visual de email e senha
 - Botão para mostrar ou ocultar senha
+- Tela de cadastro com medidor visual de senha
 - Backend local sem dependências externas
 - Persistência dos emails em `data/emails.json`
 - Dashboard aberta depois do login
