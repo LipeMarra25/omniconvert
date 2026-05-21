@@ -73,7 +73,7 @@ form.addEventListener("submit", async (event) => {
     }
 
     localStorage.setItem("orbit-session", JSON.stringify(data.session));
-    showToast("Email salvo. Abrindo dashboard...");
+    showToast("Acesso salvo. Abrindo dashboard...");
 
     window.setTimeout(() => {
       window.location.href = data.redirectTo;
@@ -82,7 +82,7 @@ form.addEventListener("submit", async (event) => {
     showToast(error.message);
   } finally {
     submitButton.disabled = false;
-    submitButton.querySelector("span").textContent = "Entrar na órbita";
+    submitButton.querySelector("span").textContent = "Entrar";
   }
 });
 

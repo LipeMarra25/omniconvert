@@ -1,6 +1,6 @@
-# Orbit Pass Login
+# NeonGate Login
 
-Página de login responsiva e animada, com backend Java e dashboard pós-login.
+Página de login neon responsiva, com backend Java e dashboard pós-login.
 
 ## Recursos
 

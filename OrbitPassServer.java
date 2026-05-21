@@ -37,7 +37,7 @@ public class OrbitPassServer {
         server.createContext("/", OrbitPassServer::handle);
         server.setExecutor(null);
         server.start();
-        System.out.println("Orbit Pass rodando em http://localhost:" + PORT);
+        System.out.println("NeonGate rodando em http://localhost:" + PORT);
     }
 
     private static void handle(HttpExchange exchange) throws IOException {
