@@ -7,7 +7,6 @@ Slogan: **Convert anything. Instantly.**
 ## Recursos
 
 - Layout responsivo para desktop e celular
-- Alternância entre tema claro e escuro
 - Animações e microinterações em CSS
 - Validação visual de email e senha
 - Botão para mostrar ou ocultar senha
