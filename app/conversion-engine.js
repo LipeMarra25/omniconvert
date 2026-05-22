@@ -1,3 +1,5 @@
+import { getCurrencyRate } from "./api-layer/currency-api.js";
+
 const numberFormatter = new Intl.NumberFormat("pt-BR", {
   maximumFractionDigits: 8
 });
@@ -147,6 +149,7 @@ const linearCategories = [
     id: "currency",
     name: "Moedas",
     group: "Moedas",
+    type: "currency",
     units: {
       BRL: 1,
       USD: 5.12,
@@ -156,9 +159,10 @@ const linearCategories = [
       CAD: 3.75,
       CHF: 5.74,
       AUD: 3.39
-    }
+    },
+    unitList: ["BRL", "USD", "EUR", "GBP", "JPY", "CAD", "CHF", "AUD"]
   }
-].map((category) => ({
+].map((category) => category.type ? category : ({
   ...category,
   type: "linear",
   unitList: Object.keys(category.units)
@@ -373,7 +377,30 @@ export function convert({ categoryId, value, from, to }) {
     raw,
     formatted: `${format(raw)} ${to}`,
     category: category.name,
-    detail: `${value} ${from} → ${format(raw)} ${to}`
+    detail: `${value} ${from} → ${format(raw)} ${to}`,
+    provider: "engine local"
+  };
+}
+
+export async function convertAsync(payload) {
+  const category = findCategory(payload.categoryId);
+
+  if (category.type !== "currency") {
+    return convert(payload);
+  }
+
+  const input = toNumber(payload.value);
+  const quote = await getCurrencyRate(payload.from, payload.to);
+  const raw = input * quote.rate;
+
+  return {
+    raw,
+    formatted: `${format(raw)} ${payload.to}`,
+    category: category.name,
+    detail: `${payload.value} ${payload.from} → ${format(raw)} ${payload.to}`,
+    provider: quote.provider,
+    rateDate: quote.date,
+    warning: quote.warning
   };
 }
 

@@ -1,4 +1,4 @@
-import { categories, convert, findCategory, searchableText } from "./conversion-engine.js";
+import { categories, convertAsync, findCategory, searchableText } from "./conversion-engine.js";
 import {
   canConvert,
   clearHistory,
@@ -177,7 +177,7 @@ function buildHistoryItem(output) {
   };
 }
 
-function runConversion({ silent = false } = {}) {
+async function runConversion({ silent = false } = {}) {
   if (!elements.value.value.trim()) {
     elements.result.textContent = "Resultado aparece aqui";
     elements.detail.textContent = "Escolha uma categoria e informe um valor.";
@@ -190,7 +190,11 @@ function runConversion({ silent = false } = {}) {
   }
 
   try {
-    const output = convert({
+    elements.detail.textContent = activeCategoryId === "currency"
+      ? "Buscando cotação em tempo real..."
+      : "Calculando...";
+
+    const output = await convertAsync({
       categoryId: activeCategoryId,
       value: elements.value.value,
       from: elements.from.value,
@@ -200,7 +204,9 @@ function runConversion({ silent = false } = {}) {
 
     lastConversion = item;
     elements.result.textContent = output.formatted;
-    elements.detail.textContent = output.detail;
+    elements.detail.textContent = output.provider === "engine local"
+      ? output.detail
+      : `${output.detail} • ${output.provider} • ${output.rateDate}${output.warning ? " • fallback ativo" : ""}`;
 
     if (!silent) {
       incrementUsage(session);

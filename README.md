@@ -15,6 +15,8 @@ Slogan: **Convert anything. Instantly.**
 - Conversor universal com abas por categoria
 - Histórico e favoritos por conta via `localStorage`
 - Plano Free com limite diário e Plus em modo demo
+- API Frankfurter para conversão de moedas
+- Cache diário e fallback local para câmbio
 - Backend local sem dependências externas
 - Persistência dos emails em `data/emails.json`
 - Dashboard aberta depois do login
@@ -22,6 +24,7 @@ Slogan: **Convert anything. Instantly.**
 ## Estrutura
 
 - `app/conversion-engine.js`: motor reutilizável de conversões
+- `app/api-layer/currency-api.js`: integração Frankfurter, cache e fallback local
 - `app/state.js`: sessão, plano, limites, histórico e favoritos
 - `app/dashboard.js`: UI, tabs, ações e modal Plus
 - `OmniConvertServer.java`: backend local de autenticação demo
