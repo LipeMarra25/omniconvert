@@ -1,0 +1,12 @@
+<svg width="920" height="220" viewBox="0 0 920 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">OmniConvert logo mono</title>
+  <desc id="desc">Monochrome OmniConvert logo with OC icon and wordmark.</desc>
+  <rect x="24" y="24" width="172" height="172" rx="44" fill="#0C1020"/>
+  <rect x="24.75" y="24.75" width="170.5" height="170.5" rx="43.25" stroke="#F5F7FF" stroke-opacity="0.18" stroke-width="1.5"/>
+  <path d="M62 110C62 83.49 83.49 62 110 62H121C126.523 62 131 66.477 131 72C131 77.523 126.523 82 121 82H110C94.536 82 82 94.536 82 110C82 125.464 94.536 138 110 138H121C126.523 138 131 142.477 131 148C131 153.523 126.523 158 121 158H110C83.49 158 62 136.51 62 110Z" fill="#F5F7FF"/>
+  <path d="M100 110C100 83.49 121.49 62 148 62H156V82H148C132.536 82 120 94.536 120 110C120 125.464 132.536 138 148 138H156V158H148C121.49 158 100 136.51 100 110Z" fill="#A9AEC4"/>
+  <path d="M148 62H158C163.523 62 168 66.477 168 72C168 77.523 163.523 82 158 82H148V62Z" fill="#F5F7FF"/>
+  <path d="M148 138H158C163.523 138 168 142.477 168 148C168 153.523 163.523 158 158 158H148V138Z" fill="#F5F7FF"/>
+  <text x="232" y="126" fill="#F5F7FF" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" letter-spacing="-1">OmniConvert</text>
+  <text x="237" y="158" fill="#A9AEC4" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600">Convert. Calculate. Transform.</text>
+</svg>

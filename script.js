@@ -63,6 +63,7 @@ form?.addEventListener("submit", async (event) => {
   const buttonLabel = form.dataset.buttonLabel || "Entrar";
 
   submitButton.disabled = true;
+  submitButton.classList.add("is-loading");
   submitButton.querySelector("span").textContent = form.dataset.loadingLabel || "Sincronizando...";
 
   try {
@@ -91,6 +92,7 @@ form?.addEventListener("submit", async (event) => {
     showToast(error.message);
   } finally {
     submitButton.disabled = false;
+    submitButton.classList.remove("is-loading");
     submitButton.querySelector("span").textContent = buttonLabel;
   }
 });

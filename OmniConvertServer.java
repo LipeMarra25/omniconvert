@@ -228,6 +228,9 @@ public class OmniConvertServer {
         if (fileName.endsWith(".js")) return "text/javascript; charset=utf-8";
         if (fileName.endsWith(".json")) return "application/json; charset=utf-8";
         if (fileName.endsWith(".md")) return "text/markdown; charset=utf-8";
+        if (fileName.endsWith(".svg")) return "image/svg+xml; charset=utf-8";
+        if (fileName.endsWith(".png")) return "image/png";
+        if (fileName.endsWith(".ico")) return "image/x-icon";
 
         return "application/octet-stream";
     }
